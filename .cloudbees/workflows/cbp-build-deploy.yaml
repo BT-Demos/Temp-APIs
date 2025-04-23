@@ -28,9 +28,9 @@ jobs:
       - name: register-build-artifacts
         uses: https://github.com/cloudbees-io/register-build-artifact@v1
         with:
-          name: App9-APIs
+          name: SampleApp-APIs
           version: 1.0.0
-          url: docker.io/App9/App9-APIs:1.0.0
+          url: docker.io/SampleApp/SampleApp-APIs:1.0.0
 
   deploy:
     needs: [build]
@@ -40,7 +40,7 @@ jobs:
         kind: deploy
         uses: cloudbees-io/register-deployed-artifact@v1
         with:
-          name: App9-APIs
+          name: SampleApp-APIs
           version: 1.0.0
-          url: docker.io/App9/App9-APIs:1.0.0
+          url: docker.io/SampleApp/SampleApp-APIs:1.0.0
           target-environment: "qa"
